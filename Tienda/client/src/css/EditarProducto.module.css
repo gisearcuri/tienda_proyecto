@@ -1,0 +1,53 @@
+.body{
+    padding:20px;
+    font-family: 'Playfair Display', serif;
+    font-size:large;
+    color: #57453a;
+}
+.cardEditar{
+    background-color: #babca4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+input {
+    padding: 8px;
+    font-size: 14px;
+}
+
+.preview-image {
+    max-width: 200px;
+    margin-bottom: 10px;
+}
+
+.error {
+    color: #d9534f;
+    font-size: 13px;
+}
+
+.btnGuardar {
+    color: #57453a;
+    background-color: #ecdfcd;
+    border: none;
+    border-radius: 5px;
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+    margin-top: 20px;
+    }

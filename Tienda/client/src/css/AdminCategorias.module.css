@@ -1,0 +1,24 @@
+.body{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.agregar{
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    width: 80px;
+    height: 30px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+.btnEliminar{
+    background-color: white;
+    color: red;
+    border: none;
+    border-radius: 5px;
+    width: 80px;
+    height: 30px;
+    cursor: pointer;
+    margin-right: 20px;
+}

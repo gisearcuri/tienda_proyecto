@@ -1,0 +1,92 @@
+.body{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+.tarjetaProducto {
+    background-color: #ecdfcd;
+    align-items: center;
+    width: 300px;
+    padding:20px;
+    border-radius: 8px;
+    margin: 10px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.tarjetaProducto:hover {
+    background-color: #ecdfcd;  
+    transform: translateY(-1px);
+}
+
+.tarjetaImg {
+    width: 100%;
+    height: 220px;  
+
+}
+.tarjetaNombre{
+
+}
+.tarjetaTitulo{
+
+}
+.productoDescripcion{
+
+}
+.productoPrecio{
+
+}
+.tarjetaBotones{
+
+}
+.btnEditar {
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    background-color: #bab78c;
+
+    border: none;
+    outline: none;
+    box-shadow: none;
+
+    border-radius: 5px;
+    width: 100px;
+    height: 40px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btnPoderes:hover,
+.btnPoderes:focus,
+.btnPoderes:active,
+.btnPoderes:visited {
+    outline: none;
+    box-shadow: none;
+    color: black;
+}
+
+.btnPoderes:hover {
+    background-color: #bab7;
+    transform: translateY(-1px);
+}
+.btnEliminar{
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    background-color: #a4927a;
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    height: 40px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.btnEliminar:hover {
+    background-color: #8f7e68;
+    transform: translateY(-1px);
+}

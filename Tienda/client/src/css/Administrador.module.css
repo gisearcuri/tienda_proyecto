@@ -1,0 +1,90 @@
+.body{
+    display:flex;
+    flex-direction: row;
+    padding: 20px;
+}
+.tarjetaProducto {
+    background-color: #ecdfcd;
+    align-items: center;
+    width: 400px;
+    padding:20px;
+    border-radius: 8px;
+    margin: 10px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.tarjetaProducto:hover {
+    background-color: #ecdfcd;  
+    transform: translateY(-1px);
+}
+
+.tarjetaImg {
+    width: 100%;
+    height: 220px;  
+
+}
+.tarjetaNombre{
+
+}
+.tarjetaTitulo{
+
+}
+.productoDescripcion{
+
+}
+.productoPrecio{
+
+}
+.tarjetaBotones{
+
+}
+.btnDetalle {
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    background-color: #bab78c;
+
+    border: none;
+    outline: none;
+    box-shadow: none;
+
+    border-radius: 5px;
+    width: 150px;
+    height: 40px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btnDetalle:hover,
+.btnDetalle:focus,
+.btnDetalle:active,
+.btnDetalle:visited {
+    outline: none;
+    box-shadow: none;
+    color: black;
+}
+
+.btnDetalle:hover {
+    background-color: #bab7;
+    transform: translateY(-1px);
+}
+.btnEliminar{
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    background-color: #a4927a;
+    border: none;
+    border-radius: 5px;
+    width: 150px;
+    height: 40px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.btnEliminar:hover {
+    background-color: #8f7e68;
+    transform: translateY(-1px);
+}

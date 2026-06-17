@@ -1,0 +1,44 @@
+.body{
+    display:flex;
+    flex-direction: column;
+    padding: 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: large;
+}
+
+.tarjetaProducto{
+    padding:20px;
+    background-color: #ecdfcd;
+    display: flex;
+    flex-direction: row;
+    padding:5rem;
+}
+.tarjetaImg {
+    width: 100%;
+    height: 400px;  
+
+}
+.detalles{
+display: flex;
+flex-direction: column;
+margin-left: 3rem;
+
+}
+.btnEliminar{
+    color: white;
+    background-color: #974619;
+    border: none;
+    border-radius: 5px;
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+}
+.btnEditar{
+    color: white;
+    background-color: #bab78c;
+    border: none;
+    border-radius: 5px;
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+}

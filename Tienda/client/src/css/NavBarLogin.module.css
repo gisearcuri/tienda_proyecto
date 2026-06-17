@@ -1,0 +1,160 @@
+.navBar{
+    background-color: #c2a88f;
+    color: #604a33;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo{
+    flex: 1;
+    font-family: 'Playfair Display', serif;
+    
+}
+.home{
+    text-decoration: none;
+}
+.navLinks{
+    flex: 1;
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+}
+.btnMenu{
+    font-family: 'Playfair Display', serif;
+    color: black;
+    background-color: #f9f7fd;
+    border: none;
+    border-radius: 5px;
+    width: 150px;
+    height: 40px;
+}
+.despliegue{
+    position: relative;
+    display: inline-block;
+}
+.deseos{
+    display: flex;
+    align-items: center;
+}
+.ingresar{
+    font-family: 'Playfair Display', serif;
+    color: black;
+    background-color: #ecdfcd;
+    border: none;
+    border-radius: 5px;
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+}
+.productos{
+    font-family: 'Playfair Display', serif;
+    color: black;
+    background-color: #ecdfcd;
+    border: none;
+    border-radius: 5px;
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+}
+
+
+.menuOculto{
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #f9f7fd;
+    min-width: 160px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    border-radius: 4px;
+    z-index: 1000;
+}
+.despliegue:hover .menuOculto {
+    display: block;
+}
+.desplieguebtn{
+    font-family: 'Playfair Display', serif;
+    display: block;
+    padding: 10px 14px;
+    text-decoration: none;
+    color: #333;
+}
+.desplieguebtn:hover {
+    background-color: #f1f1f1;
+}
+.carritoContainer {
+    position: relative;
+
+}
+.carrito{
+    color: black;
+    background-color: #ecdfcd;
+    border: none;
+    border-radius: 100px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+.underCarrito{
+    background: #e63946;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 7px;
+    font-size: 12px;
+    margin-left: 6px;
+}
+.dropdown {    
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 110%;
+    right: 0;
+    width: 260px;
+    background: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 6px;
+    z-index: 100;
+}
+.imgCarrito {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.item {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.eliminar {
+    background: transparent;
+    border: none;
+    color: #e63946;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.eliminar:hover {
+    color: #b71c1c;
+}
+.info {
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+}
+.item:last-child {
+    border-bottom: none;
+}
+
+.vacio {
+    padding: 12px;
+    font-size: 14px;
+    color: #777;
+    }
+.cantidad{
+
+}
