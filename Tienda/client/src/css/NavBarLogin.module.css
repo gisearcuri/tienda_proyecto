@@ -1,6 +1,4 @@
 .navBar{
-    background-color: #c2a88f;
-    color: #604a33;
     padding: 1rem;
     display: flex;
     justify-content: center;
@@ -13,6 +11,7 @@
 }
 .home{
     text-decoration: none;
+    color: black;
 }
 .navLinks{
     flex: 1;
@@ -40,7 +39,7 @@
 .ingresar{
     font-family: 'Playfair Display', serif;
     color: black;
-    background-color: #ecdfcd;
+    background-color: white;
     border: none;
     border-radius: 5px;
     width: 150px;
@@ -50,8 +49,8 @@
 .productos{
     font-family: 'Playfair Display', serif;
     color: black;
-    background-color: #ecdfcd;
     border: none;
+    background-color: white;
     border-radius: 5px;
     width: 150px;
     height: 40px;
@@ -89,7 +88,7 @@
 }
 .carrito{
     color: black;
-    background-color: #ecdfcd;
+    background-color: white;
     border: none;
     border-radius: 100px;
     width: 50px;
@@ -104,6 +103,7 @@
     font-size: 12px;
     margin-left: 6px;
 }
+
 .dropdown {    
     display: flex;
     flex-direction: column;
@@ -126,9 +126,15 @@
 
 .item {
     display: flex;
-    gap: 10px;
+    padding: 10px;
     align-items: center;
 }
+.btnCantidad{
+    background-color: white;
+    border: none;
+}
+
+
 .eliminar {
     background: transparent;
     border: none;
@@ -141,20 +147,41 @@
 .eliminar:hover {
     color: #b71c1c;
 }
+.pedido{
+    margin-left: 10px ;
+    margin-top: 10px;
+}
 .info {
     display: flex;
     flex-direction: column;
     font-size: 13px;
+    margin-left: 8px;
 }
 .item:last-child {
     border-bottom: none;
 }
-
+.envG{
+    color:red;
+    font-size: 13px;
+    margin-left: 10px;
+}
+.subtotal{
+    margin-left: 10px;
+    display: flex;
+}
 .vacio {
     padding: 12px;
     font-size: 14px;
     color: #777;
     }
+.comprar{
+    color: white;
+    background-color: black;
+    padding: 10px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
 .cantidad{
 
 }

@@ -3,6 +3,8 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { jwtDecode } from "jwt-decode";
 import style from '../css/Login.module.css';
+import {Link} from 'react-router-dom';
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 
 const Login = ({setLogin}) => {
@@ -11,6 +13,8 @@ const Login = ({setLogin}) => {
         contrasena : ''
     })
     const [errors, setErrors] = useState({})
+
+    const [mostrarContrasena, setMostrarContrasena] = useState(false);
 
     const navigate = useNavigate();
 
@@ -38,12 +42,17 @@ const Login = ({setLogin}) => {
                 }
                 
             }
-        ).catch(e=> setErrors(e.response?.data?.errors))
+        ).catch(e => {
+            console.log("ERROR DEL LOGIN:", e);
+            console.log("RESPUESTA DEL SERVIDOR:", e.response?.data);
+
+            setErrors(e.response?.data?.errors || {});
+        });
     }
     return (
         <div className={style.body}>            
             <div className={style.cardIngresar}>
-                <h3>Inicia sesion y enterate de las novedades</h3>
+                <h3 className={style.titulo}>Inicia sesion y enterate de las novedades</h3>
                 <form onSubmit={e => loginProcess(e)}>
                     <div>
                         <label htmlFor="email" className="form-label">Email </label>
@@ -51,11 +60,18 @@ const Login = ({setLogin}) => {
                         {errors.email  && <p style={{color : "red"}}>{errors.email}</p>}
                     </div>
                     <div>
-                        <label htmlFor="exampleInputPassword1" className="form-label">Contraseña</label>
-                        <input type="password" className="form-control" id="exampleInputPassword1" name="contrasena"value={state.contrasena} onChange={(e)=> updateState(e)}></input>
-                        {errors.contrasena  && <p style={{color : "red"}}>{errors.contrasena}</p>}
+                        <label htmlFor="exampleInputPassword1" className="form-label"> Contraseña </label>
+                        <div className={style.contenedorPassword}>
+                            <input type={mostrarContrasena ? "text" : "password"} className="form-control" id="exampleInputPassword1" name="contrasena" value={state.contrasena} onChange={(e) => updateState(e)} />
+                            <button type="button" className={style.botonPassword} onClick={() => setMostrarContrasena(!mostrarContrasena)} > {mostrarContrasena ? <FaEyeSlash /> : <FaEye />} </button>
+                        </div>
+                        {errors.contrasena && (
+                            <p style={{ color: "red" }}>{errors.contrasena}</p>
+                        )}
                     </div>
-                    <button type="submit" className={style.btnIngresar}>Iniciar sesion</button>
+                    <p>Todavia no tenes cuenta?<Link to={`/registro`} className={style.links}>Registrate</Link></p>
+                    <Link to={``} className={style.links}>¿Olvidaste tu contraseña?</Link>
+                    <button type="submit" className={style.btnIngresar}>Iniciar sesion</button>                   
                 </form>
             </div>
         </div>

@@ -118,6 +118,7 @@ const totalItems = carrito.reduce((acc, p) => acc + p.cantidad, 0);
         < Route  path='/productosAdmin/:id' element={ < ProductoAdmin listaProductos={listaProductos} setListaProductos={setListaProductos} cerrarSesion={cerrarSesion}/>}></Route>
         < Route  path='/productos/nueva' element={ < FormularioProductos listaProductos={listaProductos} setListaProductos={setListaProductos} cerrarSesion={cerrarSesion} />}></Route>
         < Route  path='/categoriasAdmin' element={ <AdminCategorias></AdminCategorias>}></Route>
+        < Route  path="/productosAdmin/categoria/:slug" element={ <ProductosAdmin listaProductos={listaProductos} setListaProductos={setListaProductos}/>}/>
       </Routes>
       <Footer></Footer>
     </>

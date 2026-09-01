@@ -66,7 +66,15 @@ const productosControlador = {
             if (!producto) {
                 return res.status(404).json({ message: "El id indicado no existe" });
             }
+            let estadoStock;
 
+            if (producto.cantidad === 0) {
+                estadoStock = "agotado";
+            } else if (producto.cantidad <= 5) {
+                estadoStock = "pocas_unidades";
+            } else {
+                estadoStock = "disponible";
+            }
         res.status(200).json(producto);
         } catch {
             res.status(400).json({ error: "El servidor falló" });

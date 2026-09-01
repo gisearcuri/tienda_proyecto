@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import style from '../css/NavBarLogin.module.css';
-import { AiOutlineShoppingCart } from "react-icons/ai";
+/*import { AiOutlineShoppingCart } from "react-icons/ai";*/
+import { HiOutlineShoppingBag } from "react-icons/hi2";
 /*import { FaHeart } from "react-icons/fa6";*/
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -53,12 +54,13 @@ const NavBarLogin = ({ carrito,totalItems, eliminarDelCarrito, sumarCantidad, re
                     </div> */}
                     <div className={style.carritoContainer}>
                         <button className={style.carrito}onClick={allCarrito}>
-                            <AiOutlineShoppingCart />
-                            {totalItems > 0 && (
+                            {/*<AiOutlineShoppingCart />*/
+                            <HiOutlineShoppingBag />
+                            /* totalItems > 0 && (
                             <span className={style.underCarrito}>
                             {totalItems}
                             </span>
-                        )}
+                        )*/}
                         </button>
                         {open && (
                             <div className={style.dropdown}>
@@ -66,7 +68,13 @@ const NavBarLogin = ({ carrito,totalItems, eliminarDelCarrito, sumarCantidad, re
                                 <p className={style.vacio}>Carrito vacío</p>
                                 ) : (
                                 <>
+                                    <p className={style.pedido}>Mi pedido</p>
+                                        <div className={style.subtotal}>
+                                            <p>Subtotal : </p>
+                                            <p>$ {total}</p>
+                                        </div>
                                     {carrito.map((producto, index) => (
+                                    
                                     <div key={index} className={style.item}>
                                         <img src={producto.url} alt={producto.nombre} className={style.imgCarrito} />
                                         <div className={style.info}>
@@ -74,18 +82,15 @@ const NavBarLogin = ({ carrito,totalItems, eliminarDelCarrito, sumarCantidad, re
                                             <span>${producto.precio}</span>
                                         </div>
                                         <div className={style.cantidad}>
-                                            <button onClick={() => restarCantidad(producto._id)}>-</button>
+                                            <button className={style.btnCantidad} onClick={() => restarCantidad(producto._id)}>-</button>
                                             <span>{producto.cantidad}</span>
-                                            <button onClick={() => sumarCantidad(producto._id)}>+</button>
+                                            <button className={style.btnCantidad} onClick={() => sumarCantidad(producto._id)}>+</button>
                                         </div>
                                         <button className={style.eliminar} onClick={() => eliminarDelCarrito(producto._id)}> ✕ </button>
                                     </div>
                                     ))}
                                     <div className={style.footerCarrito}>
-                                        <div className={style.total}>
-                                            <strong>Total:</strong>
-                                            <strong>${total}</strong>
-                                        </div>
+                                    <p className={style.envG}>Te faltan ${} para obtener envío gratis.</p>
                                     <Link to="/comprar" className={style.comprar}> Comprar </Link>
                                     </div>
                                 </>

@@ -7,7 +7,7 @@
     font-family: 'Playfair Display', serif;
     width: 600px;
     height: 400px;
-    background-color: #a4a595;
+    background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,16 +15,47 @@
     border-radius: 8px;
     margin:30px;
 }
+.titulo{
+    margin-bottom: 10px;
+}
 
+.links{
+    text-decoration: none;
+    color: black;
+}
 
 .btnIngresar{
-
-    color: black;
-    background-color: #ecdfcd;
+    color: white;
+    background-color: black;
     border: none;
-    border-radius: 5px;
     width: 150px;
     height: 40px;
     cursor: pointer;
     margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contenedorPassword {
+    position: relative;
+}
+
+.botonPassword {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    border: none;
+    background: transparent;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #666;
+}
+.contenedorPassword input {
+    padding-right: 45px;
 }

@@ -8,7 +8,7 @@
 
 .tarjetaProducto{
     padding:20px;
-    background-color: #ecdfcd;
+    background-color: white;
     display: flex;
     flex-direction: row;
     padding:5rem;
@@ -18,20 +18,16 @@
     height: 400px;  
 
 }
-.detalles{
-display: flex;
-flex-direction: column;
-margin-left: 3rem;
-
-}
-.btnEliminar{
+.carrito{
     color: white;
-    background-color: #974619;
+    background-color: black;
     border: none;
-    border-radius: 5px;
-    width: 150px;
+    width: 200px;
     height: 40px;
     cursor: pointer;
+}
+.detalles{
+    margin-left: 20px;
 }
 .btnEditar{
     color: white;
@@ -41,4 +37,62 @@ margin-left: 3rem;
     width: 150px;
     height: 40px;
     cursor: pointer;
+}
+.tarjetaProducto2{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+.tarjetaInteres {
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.tarjetaInteres:hover {
+    transform: scale(1.05);
+}
+
+.tarjetaImg2 {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.tarjetaNombre2 {
+    padding: 10px;
+}
+
+.boton {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+.controlesCarrusel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.controlesCarrusel button {
+    border: none;
+    background: #222;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.controlesCarrusel button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.controlesCarrusel span {
+    font-weight: bold;
 }

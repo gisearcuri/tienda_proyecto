@@ -1,21 +1,30 @@
 .resumenCompra{
-    padding: 20px;
-    background-color: antiquewhite;    
+    padding: 20px;  
     display: flex;
     flex-direction: column;
     gap:20px;
 }
 .item{
-    width: 400px;
+    width: 700px;
     margin: 0 auto;
-    background-color: white;
     display: flex;
-    justify-content: center;
-    align-items: center; 
+    align-items: center;
+    
+}
+.info{
+    display: flex;
+    padding: 20px;
+}
+.producto{
+    text-decoration: none;
+    color:black;
 }
 .cantidad{
     display: flex;
     align-items: center;
+}
+.total{
+display: flex;
 }
 .imgCarrito{
     display: flex;

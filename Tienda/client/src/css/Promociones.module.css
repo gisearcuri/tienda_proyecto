@@ -1,0 +1,22 @@
+.hero {
+    width: 100%;
+    height: calc(100vh - 70px);
+
+    background-image: url("/img/promocion.jpg");
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido {
+    text-align: center;
+}
+
+.btnPromos{
+    background-color: black;
+    color: white;
+    border: none;
+}

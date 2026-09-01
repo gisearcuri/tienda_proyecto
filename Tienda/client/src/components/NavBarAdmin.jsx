@@ -4,12 +4,14 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js' // optional, for JS component
 import style from '../css/NavBarAdmin.module.css';
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
 
 const NavBarAdmin = ({cerrarSesion}) => {
+    const { slug } = useParams();
     const [categorias, setCategorias] = useState([]);
     useEffect(() => {
-        axios.get("http://localhost:8000/api/categoria")
+        axios.get("http://localhost:8000/api/categorias")
         .then(res => setCategorias(res.data))
         .catch(err => console.error("Error al traer categorías", err));
     }, []);
@@ -21,19 +23,18 @@ const NavBarAdmin = ({cerrarSesion}) => {
                 <div className={style.despliegue}>
                     <button className={style.ingresar}>Productos</button>
                     <div className={style.menuOculto}>
+                        <Link className={style.desplieguebtn} to="/productos/nueva">Agregar producto</Link>                
+                        <Link to="/categoriasAdmin" className={style.desplieguebtn}>Admin categorias</Link>
                         <Link  to="/productosAdmin" className={style.desplieguebtn}>Todos</Link> 
                         {categorias.map(cat => (
-                        <Link key={cat._id} to={`/productos/categoria/${cat._id}`} className={style.desplieguebtn}> {cat.nombre} </Link>
+                        <Link key={cat._id} to={`/productosAdmin/categoria/${cat.slug}`} className={style.desplieguebtn}> {cat.nombre} </Link>
                         ))}    
                         {categorias.length === 0 && (
                         <span className={style.desplieguebtn}>Sin categorías</span>
                         )}                         
                     </div>                    
                 </div>   
-            <div className={style.navLinks}>
-                <Link className="navbar-brand" to="/productos/nueva">Agregar producto</Link>                
-            </div>
-            <Link to="/categoriasAdmin" className={style.categorias}>Categorias</Link>
+
             <button className={style.cerrarSesion} onClick={cerrarSesion}>Cerrar sesion</button>
 
         </nav>

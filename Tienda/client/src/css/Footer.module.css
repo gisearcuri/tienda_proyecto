@@ -1,8 +1,18 @@
 .footer{
-    background-color:   #57453a;
+    background-color:black;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
     color:white;
+}
+.links{
+text-decoration: none;
+color: white;
+display: flex;
+}
+.firma{
+    margin-left: 10px;
+    color: black;
+    text-decoration: none;
 }

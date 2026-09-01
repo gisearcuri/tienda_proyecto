@@ -11,6 +11,19 @@ const promocionSchema = mongoose.Schema(
             type: mongoose.Schema.Types.ObjectId,
             ref: "productos"
         }],
+        titulo: {
+            type: String,
+            required: true
+        },
+
+        descripcion: {
+            type: String
+        },
+
+        imagen: {
+            type: String,
+            required: true
+        },
         activa: {
             type: Boolean,
             default: true

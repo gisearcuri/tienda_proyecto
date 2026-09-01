@@ -15,9 +15,12 @@ const EditarProducto = ({ listaProductos, setListaProductos, cerrarSesion }) => 
         descripcion : "",
         url : [],
         precio : "",
-        poder : "",
-        codigo : ""
+        cantidad : "",
+        codigo : "",
+        categoria: ""
     });
+
+    const [categorias, setCategorias] = useState([]);
 
     const [error, setError] = useState({});
 
@@ -27,10 +30,11 @@ const EditarProducto = ({ listaProductos, setListaProductos, cerrarSesion }) => 
         setState({
             nombre : buscaProdXid.nombre,
             descripcion : buscaProdXid.descripcion,
-            poder : buscaProdXid.poder,
+            cantidad : buscaProdXid.cantidad,
             url : buscaProdXid.url,
             precio : buscaProdXid.precio,
-            codigo : buscaProdXid.codigo
+            codigo : buscaProdXid.codigo,
+            categoria: buscaProdXid.categoria
         });
     }, [buscaProdXid]);
     useEffect(() => {
@@ -38,6 +42,16 @@ const EditarProducto = ({ listaProductos, setListaProductos, cerrarSesion }) => 
             navigate("/productos");
         }
     }, [buscaProdXid, navigate]);
+
+    useEffect(() => {
+    axios.get("http://localhost:8000/api/categorias")
+        .then(response => {
+            setCategorias(response.data);
+        })
+        .catch(error => {
+            console.log("Error al obtener categorías:", error);
+        });
+    }, []);
 
     const updateData = (e) => {
         e.preventDefault();
@@ -130,14 +144,14 @@ const EditarProducto = ({ listaProductos, setListaProductos, cerrarSesion }) => 
                     </div>
 
                     <div className={style.formGroup}>
-                        <label>Poder</label>
+                        <label>Cantidad</label>
                         <input
                         type="text"
-                        name="poder"
-                        value={state.poder}
+                        name="cantidad"
+                        value={state.cantidad}
                         onChange={handleChange}
                         />
-                        {error.poder && <p className="error">{error.poder}</p>}
+                        {error.cantidad && <p className="error">{error.cantidad}</p>}
                     </div>
 
                     <div className={style.formGroup}>
@@ -150,7 +164,21 @@ const EditarProducto = ({ listaProductos, setListaProductos, cerrarSesion }) => 
                         />
                         {error.codigo && <p className="error">{error.codigo}</p>}
                     </div>
+                    <div className={style.formGroup}>
+                        <label htmlFor="categoria">Categoría</label>
 
+                        <select id="categoria"name="categoria"value={state.categoria}onChange={handleChange}className={style.input}>
+                            <option value="">Seleccionar categoría</option>
+                            {categorias.map(cat => (
+                            <option key={cat._id} value={cat._id}>
+                                {cat.nombre}
+                            </option>
+                            ))}
+                        </select>
+                        {error.categoria && (
+                            <p className={style.error}>{error.categoria}</p>
+                        )}
+                    </div>
                     <button type="submit" className={style.btnGuardar}>
                         Guardar cambios
                     </button>

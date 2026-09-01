@@ -6,7 +6,8 @@ import style from '../css/Productos.module.css';
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FaHeart } from "react-icons/fa6";
 import { getProductos, getProductosPorCategoria } from "../api/productos.api";
-import { AiFillLike } from "react-icons/ai";
+{/*import { AiFillLike } from "react-icons/ai";*/}
+import { HiOutlineShoppingBag } from "react-icons/hi2";
 
 const Productos = ({onAgregar}) => {
     const [listaProductos, setListaProductos] = useState([]);
@@ -35,11 +36,10 @@ const Productos = ({onAgregar}) => {
                     <img className={style.tarjetaImg}src={producto.url} alt={producto.nombre} ></img>
                     <div className={style.tarjetaNombre}>
                         <h5 className={style.tarjetaTitulo}>{producto.nombre}</h5>
-                        <p className={style.productoDescripcion}>{producto.descripcion}</p>
                         <p className={style.productoPrecio}>${producto.precio}</p>
                         <div className={style.botones}>
                             {/*<button className={style.meGusta}><FaHeart /></button>*/}
-                            <button className={style.carrito} onClick={() => onAgregar(producto)}><AiOutlineShoppingCart /></button>
+                            <button className={style.carrito} onClick={() => onAgregar(producto)}>{/*<AiOutlineShoppingCart />*/}<HiOutlineShoppingBag /></button>
                             <Link to={`/productos/${producto._id}`} className={style.btnDetalle}>Ver detalles</Link>
                         </div>
                     </div>                       

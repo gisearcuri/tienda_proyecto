@@ -82,7 +82,7 @@ const usuarioControlador = {
             id: usuarioRecurrente._id
         };
 
-        jwt.sign(payload, SECRET, { expiresIn: "10m" }, (err, token) => {
+        jwt.sign(payload, SECRET, { expiresIn: "60m" }, (err, token) => {
             if (err) return res.status(500).json({ error: "Error generando token" });
             return res.status(200).json({ token });
         });

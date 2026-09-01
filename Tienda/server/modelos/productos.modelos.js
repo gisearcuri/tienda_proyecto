@@ -4,8 +4,8 @@ const productosSchema = mongoose.Schema(
     {
         nombre :{
             type : String,
-            minlength :[3, "Requerido, entre 3 y 15 caracteres."],
-            maxlength :[15, "Requerido, entre 3 y 15 caracteres."],
+            minlength :[3, "Requerido, entre 3 y 40 caracteres."],
+            maxlength :[40, "Requerido, entre 3 y 40 caracteres."],
             required :[true, "El producto debe tener un nombre."],
         },
         descripcion : {
